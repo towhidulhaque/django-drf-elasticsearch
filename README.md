@@ -24,19 +24,24 @@ Two months back, at my Tech Talk session with BRAC IT, I showed a demo of Elasti
     $ docker-compose exec web bash
     ```
 
-6. Populate the database with some test data by running the following command:
+6. Apply the migrations:
 
     ```sh
-    root@container-id$ python manage.py populate_db
+    root@container-id $ python manage.py migrate
     ```
-
-7. Create and populate the Elasticsearch index and mapping:
+7. Populate the database with some test data by running the following command:
 
     ```sh
-    root@container-id$ python manage.py search_index --rebuild
+    root@container-id $ python manage.py populate_db
     ```
 
-8. Test Elasticsearch with the following queries:
+8. Create and populate the Elasticsearch index and mapping:
+
+    ```sh
+    root@container-id $ python manage.py search_index --rebuild
+    ```
+
+9. Test Elasticsearch with the following queries:
 
     - [http://127.0.0.1:8000/search/user/mike/](http://127.0.0.1:8000/search/user/mike/) - should find the user 'mike13'
     - [http://127.0.0.1:8000/search/user/jess_/](http://127.0.0.1:8000/search/user/jess_/) - should find the user 'jess_'
