@@ -9,7 +9,7 @@ Two months back, at my Tech Talk session with BRAC IT, I showed a demo of Elasti
 3. Build:
 
     ```sh
-    $ docker-comose build
+    $ docker-compose build
     ```
 
 4. Run:
